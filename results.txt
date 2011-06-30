@@ -1,0 +1,46 @@
+Sequential matrix multiply clock: 0.000000
+Pthread    matrix multiply clock: 0.010000
+OpenMP     matrix multiply clock: 0.000000
+Sequential runtime = 0.001058 s
+Pthread    runtime = 0.000923 s
+OpenMP     runtime = 0.001029 s
+Pthread Speedup over SEQ: 1.146262
+OpenMP  Speedup over SEQ: 1.028183
+Pthread Test PASSED
+OpenMP  Test PASSED
+farzon@phoenix:~/Dropbox/CUDA Practice/Matrix Multiplication$ make
+gcc -std=c99 -pedantic -Wall -Werror -fopenmp -lpthread -march=native -O2 -O3 -c matrixMul.c
+gcc -std=c99 -pedantic -Wall -Werror -fopenmp -lpthread -march=native -O2 -O3 matrixTest.c matrixMul.o -o Linuxmatrixmul
+./Linuxmatrixmul
+
+Sequential matrix multiply clock: 0.000000
+Pthread    matrix multiply clock: 0.010000
+OpenMP     matrix multiply clock: 0.000000
+Sequential runtime = 0.001252 s
+Pthread    runtime = 0.000594 s
+OpenMP     runtime = 0.000615 s
+Pthread Speedup over SEQ: 2.107744
+OpenMP  Speedup over SEQ: 2.035772
+Pthread Test PASSED
+OpenMP  Test PASSED
+farzon@phoenix:~/Dropbox/CUDA Practice/Matrix Multiplication$ clear
+farzon@phoenix:~/Dropbox/CUDA Practice/Matrix Multiplication$ make clean
+rm *.o* Linuxmatrixmul* || rm -r CUDA_BIN
+farzon@phoenix:~/Dropbox/CUDA Practice/Matrix Multiplication$ make
+gcc -std=c99 -pedantic -Wall -Werror -fopenmp -lpthread -march=native -O2 -O3 -c matrixMul.c
+gcc -std=c99 -pedantic -Wall -Werror -fopenmp -lpthread -march=native -O2 -O3 matrixTest.c matrixMul.o -o Linuxmatrixmul
+./Linuxmatrixmul
+
+Sequential matrix multiply clock: 0.000000
+Pthread    matrix multiply clock: 0.010000
+OpenMP     matrix multiply clock: 0.000000
+Sequential runtime = 0.001782 s
+Pthread    runtime = 0.000596 s
+OpenMP     runtime = 0.000597 s
+Pthread Speedup over SEQ: 2.989933
+OpenMP  Speedup over SEQ: 2.984925
+Pthread Test PASSED
+OpenMP  Test PASSED
+farzon@phoenix:~/Dropbox/CUDA Practice/Matrix Multiplication$ 
+
+
